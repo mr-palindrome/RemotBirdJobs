@@ -17,12 +17,12 @@ def scrape(query):
 
         if str(tweet.user) not in block_list:
             tweets.append({
-                "sno":str(i+1),
+                # "sno":str(i+1),
                 "id": tweet.id,
-                "url": tweet.url,
-                "user": str(tweet.user),
-                "content": tweet.content,
-                "date": str(tweet.date)
+                # "url": tweet.url,
+                # "user": str(tweet.user),
+                # "content": tweet.content,
+                # "date": str(tweet.date)
             })
         else:
             max_count += 1
