@@ -1,8 +1,31 @@
-import imp
 import snscrape.modules.twitter as twitterScraper
 import json
 
-job_board_list = ["RemoteTechJobs0", "zobjobsUS", "RemoteSonar", "RecruitngEdge","CodingJobsIt"]
+job_board_list = [
+    "RemoteTechJobs0", 
+    "zobjobsUS", 
+    "RemoteSonar", 
+    "RecruitngEdge",
+    "CodingJobsIt",
+    "jobscanCo",
+    "JobHuntOrg",
+    "justremoteco",
+    "nodeskco",
+    "weworkremotely",
+    "jobmote",
+    "WantRemoteJob",
+    "daily_remote",
+    "remoteworkhub",
+    "workingnomads",
+    "DevStartupJobs",
+    "zobjobsGB",
+    "growremotelyio",
+    "jobsincrypto",
+    "Rezoomex",
+    "_remotify",
+    "Up2staff",
+    "zobjobsCA",
+]
 
 block_list = ["https://twitter.com/" + e for e in job_board_list]
 
@@ -18,7 +41,8 @@ def scrape(query):
         if str(tweet.user) not in block_list:
             tweets.append({
                 # "sno":str(i+1),
-                "id": tweet.id,
+                "id": str(tweet.id),
+                "url": str(tweet.url)
                 # "url": tweet.url,
                 # "user": str(tweet.user),
                 # "content": tweet.content,
